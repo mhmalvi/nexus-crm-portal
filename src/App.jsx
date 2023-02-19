@@ -1,0 +1,69 @@
+import "antd/dist/antd.css";
+import { Route, Routes } from "react-router-dom";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import "./App.css";
+import Login from "./Pages/Authentication/Login/Login";
+import ResetPassword from "./Pages/Authentication/Login/ResetPassword";
+import Campaigns from "./Pages/Campaigns";
+import CampaignDetails from "./Pages/Campaigns/CampaignDetails";
+import Dashboard from "./Pages/Dashborad";
+import CompanyDetails from "./Pages/Dashborad/SuperAdminDashboard/CompanyDetails";
+import CampaignInfo from "./Pages/Dashborad/SuperAdminDashboard/CompanyInfo/CampaignInfo";
+import LeadDetails from "./Pages/LeadDetails";
+import Overview from "./Pages/Overview";
+import RenewPackage from "./Pages/Package/RenewPackage";
+import Pay from "./Pages/Pay";
+import Success from "./Pages/Pay/Success";
+import PaymentStatus from "./Pages/Payments";
+import Invoice from "./Pages/Payments/Invoice";
+import RequisitionForm from "./Pages/Requisition";
+import RequisitionTable from "./Pages/Requisition/Table";
+import Settings from "./Pages/Settings";
+import EditProfile from "./Pages/Settings/Profile/EditProfile";
+import HomePage from "./Pages/LandingPage";
+import UserProfile from "./Pages/Settings/Profile/UserProfile";
+import Layout from "./Pages/Layout";
+
+function App() {
+  // useEffect(() => {
+  //   console.log = () => {};
+  // }, []);
+
+  return (
+    <div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path={"dashboard/company/:id"} element={<CompanyDetails />} />
+          <Route path="lead/:id" element={<LeadDetails />} />
+          <Route path="payments" element={<PaymentStatus />} />
+          <Route path="renew-package" element={<RenewPackage />} />
+          <Route path="pay/:id" element={<Pay />} />
+          <Route path="invoice/:id" element={<Invoice />} />
+          <Route path={"campaigns/:id"} element={<CampaignDetails />} />
+          <Route path={"campaign-details/:id"} element={<CampaignInfo />} />
+          <Route path={"success/:id"} element={<Success />} />
+          <Route path="overview" element={<Overview />} />
+          <Route path="campaigns" element={<Campaigns />} />
+          <Route path="requisitions" element={<RequisitionTable />} />
+          {/* <Route path={"settings/company/:id"} element={<CompanyDetails />} /> */}
+          <Route path="settings" element={<Settings />} />
+          <Route path="user-profile" element={<UserProfile />} />
+          <Route path="edit-profile" element={<EditProfile />} />
+        </Route>
+        <Route path="login" element={<Login />} />
+        <Route path="requisition" element={<RequisitionForm />} />
+        <Route path="reset-password" element={<ResetPassword />} />
+        <Route path="welcome" element={<HomePage />} />
+        {/* <Route path="package-create" element={<Package />} /> */}
+        {/* <Route
+          path="subscription/edit-package/:id"
+          element={<PackageUpdate />}
+        /> */}
+      </Routes>
+    </div>
+  );
+}
+
+export default App;
