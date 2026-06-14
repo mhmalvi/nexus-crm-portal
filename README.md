@@ -1,3 +1,6 @@
+<!-- repo-card -->
+![nexus-crm-portal](docs/assets/social-card.png)
+
 # Nexus CRM Portal
 
 A general-purpose frontend portal for the **Nexus CRM** microservices platform. This React application provides a streamlined interface for CRM operations, client-facing dashboards, and subscription management with PayPal and Stripe payment support.
